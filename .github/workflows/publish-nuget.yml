@@ -1,0 +1,36 @@
+
+name: Publish NuGet
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Pack NuGet
+        run: dotnet pack BuildingBlocks/AtlasPay.Contracts/AtlasPay.Contracts.csproj -c Release -o ./packages
+
+      - name: Configure GitHub Packages
+        run: |
+          dotnet nuget add source \
+            "https://nuget.pkg.github.com/david-torosyan/index.json" \
+            --name github \
+            --username david-torosyan \
+            --password "${{ secrets.GITHUB_TOKEN }}" \
+            --store-password-in-clear-text
+
+      - name: Publish NuGet
+        run: dotnet nuget push "./packages/*.nupkg" --source github --skip-duplicate
