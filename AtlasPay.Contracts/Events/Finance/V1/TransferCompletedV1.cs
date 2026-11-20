@@ -1,10 +1,9 @@
 ﻿
-namespace AtlasPay.Contracts.Events.Finance;
+namespace AtlasPay.Contracts.Events.Finance.V1;
 
-public sealed record TransferReversedV1(
+public sealed record TransferCompletedV1(
     Guid EventId,
-    Guid ReversalId,
-    Guid OriginalTransferId,
+    Guid TransferId,
     Guid FromAccountId,
     Guid ToAccountId,
     decimal Amount,

@@ -1,5 +1,3 @@
 <Solution>
-  <Folder Name="/BuildingBlocks/">
-    <Project Path="BuildingBlocks/AtlasPay.Contracts/AtlasPay.Contracts.csproj" />
-  </Folder>
+  <Project Path="AtlasPay.Contracts/AtlasPay.Contracts.csproj" />
 </Solution>

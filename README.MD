@@ -1,0 +1,1 @@
+dotnet pack .\BuildingBlocks\AtlasPay.Contracts\AtlasPay.Contracts.csproj -c Release -o .\packages

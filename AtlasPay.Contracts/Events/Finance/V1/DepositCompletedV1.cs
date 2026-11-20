@@ -1,4 +1,4 @@
-﻿namespace AtlasPay.Contracts.Events.Finance;
+﻿namespace AtlasPay.Contracts.Events.Finance.V1;
 
 public sealed record DepositCompletedV1(
     Guid EventId,

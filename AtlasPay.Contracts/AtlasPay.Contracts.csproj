@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 
 		<PackageId>AtlasPay.Contracts</PackageId>
-		<Version>1.0.0</Version>
+		<Version>1.2.2</Version>
 		<Authors>AtlasPay</Authors>
 		<Description>Shared integration event contracts for AtlasPay microservices.</Description>
 		<RepositoryUrl>https://github.com/david-torosyan/AtlasPay.Contracts</RepositoryUrl>
